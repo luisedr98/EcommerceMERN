@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-
 const Container = styled.div`
     width: 100vw;
     height: 90vh;
     display: flex;
     align-items: center;
+    background-color: #${ (props)  => props.backgroundColor };
 `;
-
 
 const ImageContainer = styled.div`
     flex: 1;
@@ -39,18 +38,16 @@ const Button = styled.button`
     cursor: pointer;
 `;
 
-
-
-export const Slide = () => {
+export const Slide = ({ backgroundColor = null, id = null, title = null, description = null, image = null }) => {
     return (
         <>
-            <Container>
+            <Container backgroundColor={backgroundColor}>
                 <ImageContainer>
-                    <Image src="/slider_woman.jpg" />
+                    <Image src={image} loading="lazy" alt={`${id}-${title}`}/>
                 </ImageContainer>
                 <InfoContainer>
-                    <Title>Summer Sale</Title>
-                    <Description>Don't compromise on style. 30% discount for new arrivals</Description>
+                    <Title>{title}</Title>
+                    <Description>{description}</Description>
                     <Button>SHOW NOW</Button>
                 </InfoContainer>
             </Container>
