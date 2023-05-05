@@ -4,3 +4,7 @@ export * from "./Slider"
 export * from "./Slide";
 export * from "./Categories";
 export * from "./CategoryItem";
+export * from "./Products";
+export * from "./ProductItem";
+export * from "./Newsletter";
+export * from "./Footer";
