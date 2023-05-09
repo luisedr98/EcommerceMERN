@@ -8,9 +8,17 @@ import {
   Twitter,
 } from "@mui/icons-material";
 import styled from "styled-components";
+import { tablet } from "../responsive";
 
 const Container = styled.section`
+  width: 100%;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+
+  ${tablet({
+    flexDirection: "row",
+  })}
 `;
 
 const Left = styled.div`

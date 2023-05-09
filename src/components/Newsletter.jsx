@@ -1,5 +1,6 @@
 import { Send } from "@mui/icons-material";
 import styled from "styled-components";
+import { tablet } from "../responsive";
 
 const Container = styled.section`
   margin: 0 auto;
@@ -9,21 +10,20 @@ const Container = styled.section`
   background-color: #fcf5f5;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   justify-content: center;
   align-items: center;
-
-  @media (min-width: 768px) {
-    /* width: 70rem;
-    flex-direction: row; */
-  }
+  gap: 1rem;
 `;
 
 const Title = styled.h1`
-  font-size: 7rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+
+  ${tablet({
+    fontSize: "7rem",
+  })}
 `;
 
 const Description = styled.p`
@@ -33,27 +33,40 @@ const Description = styled.p`
 `;
 
 const InputContainer = styled.div`
-  width: 50%;
+  width: 100%;
   font-weight: 300;
   height: 4rem;
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   border: 1px solid lightgray;
+
+  ${tablet({
+    flexDirection: "row",
+    width: "50%",
+  })}
 `;
 
 const Input = styled.input`
   border: none;
   flex: 8;
-  padding: 0.5rem;
+  padding: 1rem;
+
+  ${tablet({
+    flex: "8",
+  })}
 `;
 
 const Button = styled.button`
-  flex: 2;
+  padding: 1rem;
   border: none;
   background-color: teal;
   color: white;
   cursor: pointer;
+  ${tablet({
+    flex: "4",
+  })}
 `;
 
 export const Newsletter = () => {
